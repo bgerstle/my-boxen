@@ -1,0 +1,17 @@
+#! /bin/bash
+
+source $BOXEN_ENV_DIR/env.sh
+
+function lctl_set_env_pair() {
+  local pair="$1"
+  local key="$(echo $pair | cut -d '=' -f 1)"
+  local value="$(echo $pair | cut -d '=' -f 2)"
+
+  local cmd="launchctl setenv $key \"$value\""
+  echo $cmd
+  eval $cmd
+}
+
+for pair in $(env); do
+  lctl_set_env_pair "$pair"
+done
