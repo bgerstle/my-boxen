@@ -147,6 +147,7 @@ DEPENDENCIES
   iterm2 (= 1.2.2)
   java (= 1.7.1)
   macvim (= 1.0.0)
+  java (= 1.7.1)
   module_data (= 0.0.3)
   nginx (= 1.4.5)
   nodejs (= 4.0.1)
