@@ -1,7 +1,6 @@
 class people::btgerst::apps {
   include macvim
   include iterm2::stable
-  include intellij # parameters set in btgerst.yaml
   include harvest
   include xctool
   include flux
@@ -12,11 +11,17 @@ class people::btgerst::apps {
   include chrome
   include atom
 
+  class { 'intellij':
+    edition => 'community',
+  }
+
   # Homebrew packages
   package {
     'maven': ;
     'leiningen': ;
     'tig': ;
+    'ghc': ;
+    'cabal-install': ;
   }
 
   package { 'Java for OSX':
