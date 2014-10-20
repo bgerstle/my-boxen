@@ -1,0 +1,2 @@
+---
+boxen::config::srcdir: "/Users/%{::boxen_user}/Development"
