@@ -1,2 +1,2 @@
 ---
-boxen::config::srcdir: "/Users/%{::boxen_user}/Development"
+boxen::config::srcdir: "/Users/%{::boxen_user}/Code"
