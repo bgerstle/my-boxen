@@ -3,6 +3,8 @@ class people::btgerst {
 
   $my_home = "/Users/${::boxen_user}"
 
+  require stdlib
+
   include homebrew
   include people::btgerst::apps
   include people::btgerst::dotfiles
@@ -20,8 +22,19 @@ class people::btgerst {
     require => Repository[$oh_my_zsh_srcdir]
   }
 
+  $env_vars_to_export = ['PATH',
+                         'JAVA_HOME',
+                         'M2_HOME',
+                         'RUBY_HOME',
+                         'PYENV_HOME',
+                         'NODENV_ROOT',
+                         'BUNDLE_BIN_PATH',
+                         'GEM_HOME']
+
+  $joined_env_vars = join($env_vars_to_export, ' ')
+
   # Export shell vars to native apps using launchctl
-  exec { "${boxen::config::repodir}/script/export_env_to_launchctl":
+  exec { "${boxen::config::repodir}/script/export_env_to_launchctl ${joined_env_vars}":
     environment => [
       "BOXEN_ENV_DIR=${boxen::config::envdir}"
     ]

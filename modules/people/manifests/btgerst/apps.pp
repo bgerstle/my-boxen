@@ -21,6 +21,7 @@ class people::btgerst::apps {
     'leiningen': ;
     'tig': ;
     'ghc': ;
+    'ghci': ;
     'cabal-install': ;
   }
 
