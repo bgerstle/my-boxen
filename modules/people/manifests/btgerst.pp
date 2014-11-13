@@ -3,14 +3,14 @@ class people::btgerst {
 
   $my_home = "/Users/${::boxen_user}"
 
-  require stdlib
-
   include homebrew
   include people::btgerst::apps
   include people::btgerst::dotfiles
   include people::btgerst::prefs
   include zsh
   include java
+  include people::btgerst::tools
+
 
   $oh_my_zsh_srcdir = "${boxen::config::srcdir}/oh-my-zsh"
   repository { "${oh_my_zsh_srcdir}":
