@@ -58,6 +58,10 @@ github "stdlib",      "4.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
 github "java",        "1.7.1"
+github "macvim",      "1.0.0"
+github "iterm2",      "1.2.2"
+github "intellij",    "1.5.1", :repo => "dieterdemeyer/puppet-intellij"
+github "python",      "2.0.1", :repo => "mloberg/puppet-python"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
