@@ -8,9 +8,6 @@ class people::btgerst::tools {
     'maven': ;
     'leiningen': ;
     'tig': ;
-    'ghc': ;
-    'ghci': ;
-    'cabal-install': ;
     'zsh': ;
   }
 
@@ -18,6 +15,10 @@ class people::btgerst::tools {
     ensure  => installed,
     provider => pkgdmg,
     source  => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2014-001.dmg'
+  }
+
+  boxen::env_script { "JAVA_HOME":
+    content => "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_${java::update_version}.jdk/Contents/Home"
   }
 
   $oh_my_zsh_srcdir = "${boxen::config::srcdir}/oh-my-zsh"

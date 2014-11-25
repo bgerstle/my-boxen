@@ -27,9 +27,6 @@ class people::btgerst::prefs {
     }
   }
 
-  app_preferences { 'iTerm2Prefs.plist':
-    prefs_domain => 'com.googlecode.iterm2'
-  }
   app_preferences { 'FinderPrefs.plist':
     prefs_domain  => 'com.apple.finder',
     killall       => 'Finder'
