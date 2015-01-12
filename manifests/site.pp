@@ -12,6 +12,8 @@ Exec {
     "${boxen::config::home}/rbenv/bin",
     "${boxen::config::home}/rbenv/plugins/ruby-build/bin",
     "${boxen::config::homebrewdir}/bin",
+    "${boxen::config::home}/pyenv/bin",
+    "${boxen::config::home}/homebrew/bin",
     '/usr/bin',
     '/bin',
     '/usr/sbin',

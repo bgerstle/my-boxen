@@ -1,2 +1,3 @@
 ---
 boxen::config::srcdir: "/Users/%{::boxen_user}/Code"
+python::pyenv_version: v20141211
