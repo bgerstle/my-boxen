@@ -1,6 +1,6 @@
 class people::btgerst::tools {
   require stdlib
-  include python
+  include people::btgerst::python
   include java
 
   # Homebrew packages
@@ -12,17 +12,17 @@ class people::btgerst::tools {
   }
 
   package { 'Java for OSX':
-    ensure  => installed,
+    ensure   => installed,
     provider => pkgdmg,
-    source  => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2014-001.dmg'
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2014-001.dmg'
   }
 
-  boxen::env_script { "JAVA_HOME":
+  boxen::env_script { 'JAVA_HOME':
     content => "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_${java::update_version}.jdk/Contents/Home"
   }
 
   $oh_my_zsh_srcdir = "${boxen::config::srcdir}/oh-my-zsh"
-  repository { "${oh_my_zsh_srcdir}":
+  repository { $oh_my_zsh_srcdir:
     source => 'robbyrussell/oh-my-zsh',
   }
   file { "${my_home}/.oh-my-zsh":
@@ -30,6 +30,7 @@ class people::btgerst::tools {
     target  => $oh_my_zsh_srcdir,
     require => Repository[$oh_my_zsh_srcdir]
   }
+
 
   # launchd.conf is no longer supported in yosemite
 #  $env_vars_to_export = ['PATH',
