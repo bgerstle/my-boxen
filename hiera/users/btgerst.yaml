@@ -1,3 +1,5 @@
 ---
 boxen::config::srcdir: "/Users/%{::boxen_user}/Code"
 python::pyenv_version: v20141211
+python::global::version: '2.7.6'
+git::global_excludesfile: "%{::boxen::config::srcdir}/dotfiles/.gitignore_global"

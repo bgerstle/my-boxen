@@ -1,27 +1,10 @@
 class people::btgerst::tools {
-  require stdlib
-  include people::btgerst::python
-  include people::btgerst::java
-
   # Homebrew packages
   package {
     'maven': ;
     'leiningen': ;
     'tig': ;
-    'zsh': ;
   }
-
-
-  $oh_my_zsh_srcdir = "${boxen::config::srcdir}/oh-my-zsh"
-  repository { $oh_my_zsh_srcdir:
-    source => 'robbyrussell/oh-my-zsh',
-  }
-  file { "${my_home}/.oh-my-zsh":
-    ensure  => link,
-    target  => $oh_my_zsh_srcdir,
-    require => Repository[$oh_my_zsh_srcdir]
-  }
-
 
   # launchd.conf is no longer supported in yosemite
 #  $env_vars_to_export = ['PATH',

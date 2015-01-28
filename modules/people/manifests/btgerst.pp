@@ -3,14 +3,15 @@ class people::btgerst {
 
   $my_home = "/Users/${::boxen_user}"
 
-  include homebrew
+  include people::btgerst::shell
   include people::btgerst::apps
   include people::btgerst::dotfiles
   include people::btgerst::prefs
   include zsh
   include java
   include people::btgerst::tools
-
+  include people::btgerst::python
+  include people::btgerst::java
 
   $oh_my_zsh_srcdir = "${boxen::config::srcdir}/oh-my-zsh"
   repository { "${oh_my_zsh_srcdir}":

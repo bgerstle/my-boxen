@@ -2,16 +2,7 @@
 class people::btgerst::python {
   require stdlib
   include ::python
-
-  define py_version {
-    ::python::version { $title: }
-    ::python::package { "virtualenv for ${title}":
-        package => 'virtualenv',
-        python  => $title,
-    }
-  }
-
-  py_version { ['2.7.6', '3.4.1']: }
+  include ::python::global
 
   # Installing a pyenv plugin
   python::plugin { 'pyenv-virtualenvwrapper':
@@ -20,6 +11,6 @@ class people::btgerst::python {
   }
 
   boxen::env_script { 'pyenv-virtualenvwrapper':
-    content => 'pyenv virtualenvwrapper'
+    source => 'puppet:///modules/people/btgerst/pyenv-virtualenvwrapper.sh'
   }
 }
