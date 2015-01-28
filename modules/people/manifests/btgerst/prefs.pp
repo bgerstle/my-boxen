@@ -6,17 +6,17 @@ class people::btgerst::prefs {
   define app_preferences(
     $prefs_domain = undef,
     $killall = undef) {
-    $abs_filepath = "${boxen::config::srcdir}/dotrcfiles/${title}"
+    $abs_filepath = "${boxen::config::srcdir}/dotfiles/${title}"
     file { $abs_filepath:
       ensure => present,
-      require => Repository["${boxen::config::srcdir}/dotrcfiles"]
+      require => Repository["${boxen::config::srcdir}/dotfiles"]
     }
 
     $install_cmd = "defaults import ${prefs_domain} ${title}"
     exec { $install_cmd:
-      cwd         => "${boxen::config::srcdir}/dotrcfiles",
+      cwd         => "${boxen::config::srcdir}/dotfiles",
       subscribe   => File["${abs_filepath}"],
-      require     => Repository["${boxen::config::srcdir}/dotrcfiles"],
+      require     => Repository["${boxen::config::srcdir}/dotfiles"],
       refreshonly => true
     }
     if type($killall) == 'string' and size($killall) > 1 {
