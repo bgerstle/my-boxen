@@ -1,12 +1,12 @@
 # Stuff related to cloning & setting up my dotfiles
 class people::btgerst::dotfiles {
-  # Add my dotrcfiles repo
-  repository { "${boxen::config::srcdir}/dotrcfiles":
-    source => 'btgerst/dotrcfiles'
+  # Add my dotfiles repo
+  repository { "${boxen::config::srcdir}/dotfiles":
+    source => 'btgerst/dotfiles'
   }
 
   # Link certain dotfiles to the HOME dir
-  $linked_dotrc_files = ['.vim',
+  $linked_dot_files = ['.vim',
                         '.vimrc',
                         '.zshrc',
                         '.gitignore_global',
@@ -14,14 +14,14 @@ class people::btgerst::dotfiles {
 
   # Define resource which will create a link to the file's title in the
   # user's home dir
-  define dotrc_file {
+  define dot_file {
     file { "/Users/${::boxen_user}/${title}":
       ensure  => link,
-      target  => "${boxen::config::srcdir}/dotrcfiles/${title}",
-      require => Repository["${boxen::config::srcdir}/dotrcfiles"]
+      target  => "${boxen::config::srcdir}/dotfiles/${title}",
+      require => Repository["${boxen::config::srcdir}/dotfiles"]
     }
   }
 
   # Declare the list of dotfiles to be linked
-  dotrc_file { $linked_dotrc_files: }
+  dot_file { $linked_dot_files: }
 }
