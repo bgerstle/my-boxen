@@ -1,17 +1,19 @@
+# module for Brian Gerstle
 class people::btgerst {
   notify { 'class people::btgerst declared': }
 
   $my_home = "/Users/${::boxen_user}"
 
-  include people::btgerst::shell
-  include people::btgerst::apps
-  include people::btgerst::dotfiles
-  include people::btgerst::prefs
   include zsh
   include java
-  include people::btgerst::tools
-  include people::btgerst::python
-  include people::btgerst::java
+  include shell
+  include apps
+  include dotfiles
+  include prefs
+  include tools
+  include python
+  include java
+  include git
 
   $oh_my_zsh_srcdir = "${boxen::config::srcdir}/oh-my-zsh"
   repository { "${oh_my_zsh_srcdir}":

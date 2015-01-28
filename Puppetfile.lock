@@ -104,11 +104,6 @@ GITHUBTARBALL
     xquartz (1.2.1)
 
 GITHUBTARBALL
-  remote: dieterdemeyer/puppet-intellij
-  specs:
-    intellij (1.5.1)
-
-GITHUBTARBALL
   remote: mloberg/puppet-python
   specs:
     python (2.0.1)
@@ -139,7 +134,6 @@ DEPENDENCIES
   homebrew (= 1.12.0)
   hub (= 1.4.1)
   inifile (= 1.1.1)
-  intellij (= 1.5.1)
   iterm2 (= 1.2.2)
   java (= 1.7.1)
   macvim (= 1.0.0)
