@@ -1,4 +1,7 @@
+# Packages I want globally installed
 class people::btgerst::tools {
+  include vagrant
+
   # Homebrew packages
   package {
     'maven': ;
