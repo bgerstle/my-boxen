@@ -14,12 +14,12 @@ class people::btgerst::prefs {
   define app_preferences(
     $prefs_domain = undef,
     $killall = undef) {
+    validate_string($killall)
     $abs_filepath = "${boxen::config::srcdir}/dotfiles/${title}"
     file { $abs_filepath:
       ensure  => present,
       require => Repository["${boxen::config::srcdir}/dotfiles"]
     }
-
     $install_cmd = "defaults import ${prefs_domain} ${title}"
     exec { $install_cmd:
       cwd         => "${boxen::config::srcdir}/dotfiles",
@@ -27,11 +27,12 @@ class people::btgerst::prefs {
       require     => Repository["${boxen::config::srcdir}/dotfiles"],
       refreshonly => true
     }
-    if type($killall) == 'string' and size($killall) > 1 {
-      exec { "killall ${killall}":
+    $exec_title = "killall ${killall}"
+    if !defined(Exec[$exec_title]) {
+      ensure_resource('exec', $exec_title, {
         refreshonly => true,
         notify      => Exec[$install_cmd]
-      }
+      })
     }
   }
 

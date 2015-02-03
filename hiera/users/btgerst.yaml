@@ -1,7 +1,12 @@
 ---
 boxen::config::srcdir: "/Users/%{::boxen_user}/Code"
+
 git::global_excludesfile: "%{::boxen::config::srcdir}/dotfiles/.gitignore_global"
+
 osx:::global:
   key_repeat_rate::rate: 2
   key_repeat_delay::delay: 15
   disable_key_press_and_hold: true
+
+# install tab-completion
+vagrant::completion: true
