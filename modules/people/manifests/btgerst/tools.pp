@@ -5,6 +5,7 @@ class people::btgerst::tools {
   # Homebrew packages
   package {
     'maven': ;
+    'gradle': ;
     'leiningen': ;
     'tig': ;
   }
