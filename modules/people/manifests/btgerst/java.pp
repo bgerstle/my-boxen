@@ -9,6 +9,6 @@ class people::btgerst::java {
   }
 
   boxen::env_script { 'JAVA_HOME':
-    content => "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_${java::update_version}.jdk/Contents/Home"
+    content => "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_${::java::update_version}.jdk/Contents/Home\n"
   }
 }
