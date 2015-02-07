@@ -13,6 +13,7 @@ class people::btgerst {
   include tools
   include python
   include java
+  include haskell
   include git
 
   $oh_my_zsh_srcdir = "${boxen::config::srcdir}/oh-my-zsh"
