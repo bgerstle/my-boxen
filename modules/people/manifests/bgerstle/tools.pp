@@ -1,5 +1,5 @@
 # Packages I want globally installed
-class people::btgerst::tools {
+class people::bgerstle::tools {
   include vagrant
 
   # Homebrew packages

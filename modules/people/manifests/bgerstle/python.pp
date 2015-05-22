@@ -1,5 +1,5 @@
 # My python setup
-class people::btgerst::python {
+class people::bgerstle::python {
   require stdlib
   include ::python
   include ::python::global
@@ -11,6 +11,6 @@ class people::btgerst::python {
   }
 
   boxen::env_script { 'pyenv-virtualenvwrapper':
-    source => 'puppet:///modules/people/btgerst/pyenv-virtualenvwrapper.sh'
+    source => 'puppet:///modules/people/bgerstle/pyenv-virtualenvwrapper.sh'
   }
 }

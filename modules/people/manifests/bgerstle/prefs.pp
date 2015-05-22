@@ -1,7 +1,7 @@
 # OSX System & App preferences
-class people::btgerst::prefs {
+class people::bgerstle::prefs {
   require stdlib
-  require people::btgerst::dotfiles
+  require people::bgerstle::dotfiles
 
   # OSX settings
   include osx::global::key_repeat_rate

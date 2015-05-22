@@ -1,5 +1,5 @@
 # bootstrap and configure zsh
-class people::btgerst::shell {
+class people::bgerstle::shell {
   package {
     'zsh': ;
   }

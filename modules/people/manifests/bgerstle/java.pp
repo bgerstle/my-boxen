@@ -1,5 +1,5 @@
 # Personal manifest for Java setup
-class people::btgerst::java {
+class people::bgerstle::java {
   include ::java
 
   package { 'Java for OSX':

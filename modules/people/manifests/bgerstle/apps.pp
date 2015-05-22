@@ -1,4 +1,4 @@
-class people::btgerst::apps {
+class people::bgerstle::apps {
   include macvim
   include iterm2::stable
 

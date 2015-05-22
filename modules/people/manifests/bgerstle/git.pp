@@ -1,5 +1,5 @@
 # my global git settings
-class people::btgerst::git {
+class people::bgerstle::git {
   git::config::global {
     'user.name':
       value => 'Brian Gerstle';

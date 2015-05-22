@@ -1,5 +1,5 @@
 # Stuff related to cloning & setting up my dotfiles
-class people::btgerst::dotfiles {
+class people::bgerstle::dotfiles {
   $dotfiles_dir = "${::boxen::config::srcdir}/dotfiles"
 
   $all_dotfiles = ['.vim',
@@ -16,7 +16,7 @@ class people::btgerst::dotfiles {
   }
 
   repository { $dotfiles_dir:
-    source => 'btgerst/dotfiles'
+    source => 'bgerstle/dotfiles'
   }
   -> dot_file { $all_dotfiles: }
 

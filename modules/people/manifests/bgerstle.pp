@@ -1,11 +1,5 @@
 # module for Brian Gerstle
-class people::btgerst {
-  notify { 'class people::btgerst declared': }
-
-  $my_home = "/Users/${::boxen_user}"
-
-  include zsh
-  include java
+class people::bgerstle {
   include shell
   include apps
   include dotfiles
