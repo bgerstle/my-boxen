@@ -1,6 +1,7 @@
 # Packages I want globally installed
 class people::bgerstle::tools {
   include vagrant
+  include brewcask
 
   # Homebrew packages
   package {
@@ -8,6 +9,9 @@ class people::bgerstle::tools {
     'gradle': ;
     'leiningen': ;
     'tig': ;
+    'oclint':
+      provider => 'brewcask'
+      ;
   }
 
   # launchd.conf is no longer supported in yosemite

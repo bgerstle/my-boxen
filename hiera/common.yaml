@@ -2,3 +2,5 @@
 nodejs::global::version: 'v0.10'
 python::pyenv_version: v20141211
 python::global::version: '2.7.6'
+rbenv::global:version: '2.1.2'
+
