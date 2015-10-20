@@ -2,6 +2,7 @@
 class people::bgerstle::tools {
   include vagrant
   include brewcask
+  include virtualbox
 
   # Homebrew packages
   package {

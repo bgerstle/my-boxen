@@ -64,4 +64,5 @@ github "iterm2",      "1.2.2"
 github "python",      "2.0.1", :repo => "mloberg/puppet-python"
 github "vagrant",     "3.3.3"
 github "intellij",    "1.5.1", :repo => "dieterdemeyer/puppet-intellij"
+github "virtualbox",  "1.0.13"
 
