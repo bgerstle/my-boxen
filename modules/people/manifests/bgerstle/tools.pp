@@ -6,13 +6,13 @@ class people::bgerstle::tools {
 
   # Homebrew packages
   package {
-    'maven': ;
-    'gradle': ;
-    'leiningen': ;
+    #'maven': ;
+    #'gradle': ;
+    #'leiningen': ;
     'tig': ;
-    'oclint':
-      provider => 'brewcask'
-      ;
+  #'oclint':
+  #    provider => 'brewcask'
+  #    ;
   }
 
   # launchd.conf is no longer supported in yosemite

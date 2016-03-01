@@ -38,7 +38,7 @@ github "module_data", "0.0.3", :repo => "ripienaar/puppet-module-data"
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
-github "brewcask",    "0.0.6"
+github "brewcask",    "0.0.7"
 github "osx",         "2.8.0"
 github "dnsmasq",     "2.0.1"
 github "foreman",     "1.2.0"
@@ -58,11 +58,10 @@ github "ruby",        "8.5.2"
 github "stdlib",      "4.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
-github "java",        "1.7.1"
+#github "java",        "1.7.1"
 github "macvim",      "1.0.0"
 github "iterm2",      "1.2.2"
 github "python",      "2.0.1", :repo => "mloberg/puppet-python"
-github "vagrant",     "3.3.3"
-github "intellij",    "1.5.1", :repo => "dieterdemeyer/puppet-intellij"
+github "vagrant",     "3.3.4"
 github "virtualbox",  "1.0.13"
 
