@@ -15,11 +15,7 @@ class people::bgerstle::tools {
     'imagemagick': ;
   }
 
-  ruby_gem { 'screengif for all rubies':
-    gem          => 'screengif',
-    version      => '~> 0.1',
-    ruby_version => '*',
-  }
+  # FIXME: screengif can't install because it can't find imagemagick?
 
   # launchd.conf is no longer supported in yosemite
   # TODO: setup using LaunchAgents plist: http://apple.stackexchange.com/a/106814
