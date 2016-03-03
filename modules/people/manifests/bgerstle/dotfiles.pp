@@ -23,4 +23,7 @@ class people::bgerstle::dotfiles {
   package {
     'ctags': ; # needed for easy-tags
   }
+
+  # TODO: install source code pro font
+  # TODO: make ctags
 }
