@@ -10,16 +10,19 @@ class people::bgerstle::tools {
 
   # Homebrew packages
   package {
-    #'maven': ;
-    #'gradle': ;
-    #'leiningen': ;
     'tig': ;
-  #'oclint':
-  #    provider => 'brewcask'
-  #    ;
+    'ffmpeg': ;
+    'imagemagick': ;
+  }
+
+  ruby_gem { 'screengif for all rubies':
+    gem          => 'screengif',
+    version      => '~> 0.1',
+    ruby_version => '*',
   }
 
   # launchd.conf is no longer supported in yosemite
+  # TODO: setup using LaunchAgents plist: http://apple.stackexchange.com/a/106814
 #  $env_vars_to_export = ['PATH',
 #                         'JAVA_HOME',
 #                         'M2_HOME',
