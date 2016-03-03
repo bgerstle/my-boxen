@@ -2,7 +2,11 @@
 class people::bgerstle::tools {
   include vagrant
   include brewcask
-  include virtualbox
+
+  class { 'virtualbox':
+    version     => '5.0.14',
+    patch_level => '105127'
+  }
 
   # Homebrew packages
   package {
