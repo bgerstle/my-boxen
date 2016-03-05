@@ -20,21 +20,21 @@ class people::bgerstle {
     require => Repository[$oh_my_zsh_srcdir]
   }
 
-  $env_vars_to_export = ['PATH',
-                        'JAVA_HOME',
-                        'M2_HOME',
-                        'RUBY_HOME',
-                        'PYENV_HOME',
-                        'NODENV_ROOT',
-                        'BUNDLE_BIN_PATH',
-                        'GEM_HOME']
+  # $env_vars_to_export = ['PATH',
+  #                       'JAVA_HOME',
+  #                       'M2_HOME',
+  #                       'RUBY_HOME',
+  #                       'PYENV_HOME',
+  #                       'NODENV_ROOT',
+  #                       'BUNDLE_BIN_PATH',
+  #                       'GEM_HOME']
 
-  $joined_env_vars = join($env_vars_to_export, ' ')
+  # $joined_env_vars = join($env_vars_to_export, ' ')
 
-  # Export shell vars to native apps using launchctl
-  exec { "${boxen::config::repodir}/script/export_env_to_launchctl ${joined_env_vars}":
-    environment => [
-      "BOXEN_ENV_DIR=${boxen::config::envdir}"
-    ]
-  }
+  # # Export shell vars to native apps using launchctl
+  # exec { "${boxen::config::repodir}/script/export_env_to_launchctl ${joined_env_vars}":
+  #   environment => [
+  #     "BOXEN_ENV_DIR=${boxen::config::envdir}"
+  #   ]
+  # }
 }
