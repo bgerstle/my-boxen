@@ -16,6 +16,12 @@ class people::bgerstle::tools {
     'chisel': ;
   }
 
+  file { '.lldbinit':
+    path    => "/Users/${::boxen_user}/.lldbinit",
+    content => template('people/bgerstle/.lldbinit.erb'),
+    require => Package['chisel']
+  }
+
   # FIXME: screengif can't install because it can't find imagemagick?
 
   # launchd.conf is no longer supported in yosemite
