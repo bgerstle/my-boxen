@@ -13,6 +13,7 @@ class people::bgerstle::tools {
     'tig': ;
     'ffmpeg': ;
     'imagemagick': ;
+    'chisel': ;
   }
 
   # FIXME: screengif can't install because it can't find imagemagick?
