@@ -14,6 +14,12 @@ class people::bgerstle::tools {
     'ffmpeg': ;
     'imagemagick': ;
     'chisel': ;
+    'quicklook-json':
+      provider => 'brewcask'
+    ;
+    'qlmarkdown':
+      provider => 'brewcask'
+    ;
   }
 
   file { '.lldbinit':
