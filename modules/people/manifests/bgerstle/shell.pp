@@ -4,6 +4,9 @@ class people::bgerstle::shell {
     'zsh': ;
   }
 
+  # See def in hiera
+  include nodejs::global
+
   $oh_my_zsh_dir = "/Users/${::boxen_user}/.oh-my-zsh"
   repository { $oh_my_zsh_dir:
     source => 'robbyrussell/oh-my-zsh',

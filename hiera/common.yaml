@@ -1,6 +1,7 @@
 ---
-nodejs::nodenv::ensure: "v1.0.0"
-nodejs::global::version: 'v0.12.0'
+nodejs::build::ensure: 'v2.2.5'
+nodejs::nodenv::ensure: 'v1.0.0'
+nodejs::global::version: '4.4.1'
 python::pyenv_version: v20160202
 python::global::version: '2.7.10'
 rbenv::global:version: '2.2.4'
