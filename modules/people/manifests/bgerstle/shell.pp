@@ -11,6 +11,12 @@ class people::bgerstle::shell {
     content => 'export PATH=node_modules/.bin:$PATH'
   }
 
+  # Installing nodenv plugin
+  nodejs::nodenv::plugin { 'nodenv-package-json-engine':
+    ensure => 'v1.0.0',
+    source => 'nodenv/nodenv-package-json-engine'
+  }
+
   $oh_my_zsh_dir = "/Users/${::boxen_user}/.oh-my-zsh"
   repository { $oh_my_zsh_dir:
     source => 'robbyrussell/oh-my-zsh',
