@@ -2,6 +2,7 @@
 class people::bgerstle::tools {
   include vagrant
   include brewcask
+  include meteorjs
 
   #class { 'virtualbox':
   #  version     => '5.0.14',

@@ -64,6 +64,7 @@ github "iterm2",      "1.2.2"
 github "python",      "2.0.1", :repo => "mloberg/puppet-python"
 github "vagrant",     "3.3.4"
 github "virtualbox",  "1.0.13"
+github "meteorjs",    "1.0.5", :repo => "newtriks/puppet-meteorjs"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
