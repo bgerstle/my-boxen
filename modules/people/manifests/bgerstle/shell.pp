@@ -7,8 +7,10 @@ class people::bgerstle::shell {
   # See def in hiera
   include nodejs::global
 
+  # prefer node executables from local node_modules folder
   boxen::env_script { 'local_node_bin_on_path':
-    content => 'export PATH=node_modules/.bin:$PATH'
+    content  => 'export PATH=node_modules/.bin:$PATH',
+    priority => 'highest'
   }
 
   ruby_gem { 'bundler for all rubies':
@@ -17,9 +19,10 @@ class people::bgerstle::shell {
     ruby_version => '*',
   }
 
-  # Assumes bundle is configured to install binstubs into .bundle/bin
+  # prefer bundler binstubs if available
   boxen::env_script { 'local_bundle_bin_on_path':
-    content => 'export PATH=.bundle/bin:$PATH'
+    content  => 'export PATH=.bundle/bin:$PATH',
+    priority => 'highest'
   }
 
 
