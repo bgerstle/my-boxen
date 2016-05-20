@@ -11,6 +11,18 @@ class people::bgerstle::shell {
     content => 'export PATH=node_modules/.bin:$PATH'
   }
 
+  ruby_gem { 'bundler for all rubies':
+    gem          => 'bundler',
+    version      => '~> 1.0',
+    ruby_version => '*',
+  }
+
+  # Assumes bundle is configured to install binstubs into .bundle/bin
+  boxen::env_script { 'local_bundle_bin_on_path':
+    content => 'export PATH=.bundle/bin:$PATH'
+  }
+
+
   # Installing nodenv plugin
   nodejs::nodenv::plugin { 'nodenv-package-json-engine':
     ensure => 'v1.0.0',

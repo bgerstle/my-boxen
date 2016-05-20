@@ -6,7 +6,8 @@ class people::bgerstle::dotfiles {
                   '.vimrc',
                   '.zshrc',
                   '.gitignore_global',
-                  '.xvimrc']
+                  '.xvimrc',
+                  '.bundle/config']
 
   define dot_file {
     file { "/Users/${::boxen_user}/${title}":
@@ -23,7 +24,13 @@ class people::bgerstle::dotfiles {
   package {
     'ctags': ; # needed for easy-tags
   }
+  # TODO: make ctags
+
+  file { '.lldbinit':
+    path    => "/Users/${::boxen_user}/.lldbinit",
+    content => template('people/bgerstle/.lldbinit.erb'),
+    require => Package['chisel']
+  }
 
   # TODO: install source code pro font
-  # TODO: make ctags
 }

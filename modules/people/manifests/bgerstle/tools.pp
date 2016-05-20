@@ -3,10 +3,10 @@ class people::bgerstle::tools {
   include vagrant
   include brewcask
 
-  class { 'virtualbox':
-    version     => '5.0.14',
-    patch_level => '105127'
-  }
+  #class { 'virtualbox':
+  #  version     => '5.0.14',
+  #  patch_level => '105127'
+  #}
 
   # Homebrew packages
   package {
@@ -20,12 +20,6 @@ class people::bgerstle::tools {
     'qlmarkdown':
       provider => 'brewcask'
     ;
-  }
-
-  file { '.lldbinit':
-    path    => "/Users/${::boxen_user}/.lldbinit",
-    content => template('people/bgerstle/.lldbinit.erb'),
-    require => Package['chisel']
   }
 
   # FIXME: screengif can't install because it can't find imagemagick?
