@@ -6,7 +6,7 @@ class people::bgerstle {
   include people::bgerstle::prefs
   include people::bgerstle::tools
   include people::bgerstle::python
-  #include people::bgerstle::java
+  include people::bgerstle::java
   include people::bgerstle::haskell
   include people::bgerstle::git
 

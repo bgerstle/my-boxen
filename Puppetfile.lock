@@ -119,11 +119,6 @@ GITHUBTARBALL
     python (2.0.1)
 
 GITHUBTARBALL
-  remote: newtriks/puppet-meteorjs
-  specs:
-    meteorjs (1.0.5)
-
-GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.4.1)
@@ -151,7 +146,6 @@ DEPENDENCIES
   inifile (= 1.4.1)
   iterm2 (= 1.2.2)
   macvim (= 1.0.0)
-  meteorjs (= 1.0.5)
   module_data (= 0.0.4)
   nginx (= 1.6.0)
   nodejs (= 5.0.0)

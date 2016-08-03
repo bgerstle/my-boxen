@@ -11,4 +11,3 @@ osx:::global:
 # install tab-completion
 vagrant::completion: true
 
-#java::update_version: 71

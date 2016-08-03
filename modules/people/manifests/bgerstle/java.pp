@@ -1,14 +1,15 @@
 # Personal manifest for Java setup
 class people::bgerstle::java {
-  include ::java
-
-  package { 'Java for OSX':
-    ensure   => installed,
-    provider => pkgdmg,
-    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2014-001.dmg'
+  package { 'gradle': ; }
+  package { [
+    'java',
+    'android-studio'
+  ]:
+    provider => 'brewcask'
   }
 
   boxen::env_script { 'JAVA_HOME':
-    content => "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_${::java::update_version}.jdk/Contents/Home\n"
+    content => "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home\n"
   }
 }
+
